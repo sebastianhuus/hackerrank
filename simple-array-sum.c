@@ -24,7 +24,17 @@ int parse_int(char*);
  */
 
 int simpleArraySum(int ar_count, int* ar) {
-
+    // store the sum
+    int sum = 0;
+    
+    // look ar_count amt of times
+    while (ar_count > 0) {
+        // we sum it from the last element
+        sum += ar[ar_count - 1];
+        ar_count -= 1;
+    }
+    
+    return sum;
 }
 
 int main()
