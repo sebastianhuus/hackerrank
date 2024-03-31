@@ -51,7 +51,17 @@ int parse_int(char*);
  *
  */
 int* reverseArray(int a_count, int* a, int* result_count) {
-
+    // tell program how many elements in our returned array
+    *result_count = a_count;
+    
+    // init pointer to our array
+    int *rev_a = malloc(a_count * sizeof(int));
+    
+    for (int i = 0; i < a_count; i++) {
+        rev_a[i] = a[a_count - i - 1];
+    }
+    
+    return rev_a;
 }
 
 int main()
