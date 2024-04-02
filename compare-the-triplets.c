@@ -53,7 +53,33 @@ int parse_int(char*);
  *
  */
 int* compareTriplets(int a_count, int* a, int b_count, int* b, int* result_count) {
+    // init an array with 2 numbers, one for a and one for b
+    *result_count = 2;
+    int* result = malloc(2 * sizeof(int));
 
+    // init the points for a and b
+    int a_pts = 0;
+    int b_pts = 0;
+
+    // loop through both arrays. 
+    // we can assume they are the same size based on the case description
+    for (int i = 0; i < a_count; i++) {
+        if (a[i] == b[i]) {
+            continue;
+        }
+
+        if (a[i] > b[i]) {
+            a_pts++;
+        }
+        else {
+            b_pts++;
+        }
+    }
+    
+    result[0] = a_pts;
+    result[1] = b_pts;
+
+    return result;
 }
 
 int main()
