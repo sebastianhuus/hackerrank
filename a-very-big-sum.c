@@ -25,7 +25,12 @@ long parse_long(char*);
  */
 
 long aVeryBigSum(int ar_count, long* ar) {
+    long sum = 0;
+    for (int i = 0; i < ar_count; i++) {
+        sum += ar[i];
+    }
 
+    return sum;
 }
 
 int main()
